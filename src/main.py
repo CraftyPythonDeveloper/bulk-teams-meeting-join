@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     total_number_of_users = len(usernames)
 
-    max_workers = (total_number_of_users // 5)+1
+    max_workers = 5
     logger.debug(f"Max number to workers are {max_workers}")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         drivers = executor.map(join_meeting, usernames, [meeting_url]*len(usernames))
